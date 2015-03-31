@@ -40,5 +40,24 @@ namespace Vjezbe03_AndreaKljaic
                 lstRezultati.Items.Add(polumjer);
             }
         }
+        private void btnOcisti_Click(object sender, EventArgs e)
+        {
+            //Postavlja sadržaj TextBox-ova na zadane vrijednosti
+            txtPolumjer.Text = "0,00";
+            txtPovrsina.Text = "0,00";
+            txtOpseg.Text = "0,00";
+            //Briše elemente iz ListBox-a
+            lstRezultati.Items.Clear();
+        }
+        private void lstRezultati_DoubleClick(object sender, EventArgs e)
+        {
+            //Dohvaćamo vrijednost polumjera iz ListBox-a u varijablu
+            float polumjer = 0;
+            float.TryParse(lstRezultati.SelectedItem.ToString(), out polumjer);
+            //Postavljamo vrijednost polumjera u TextBox
+            txtPolumjer.Text = polumjer.ToString();
+            //Pozivamo ponovno izvršavanje izračuna
+            btnIzracunaj_Click(null, null);
+        }
     }
 }
