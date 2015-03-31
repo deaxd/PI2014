@@ -112,6 +112,7 @@
             this.btnIzracunaj.TabIndex = 7;
             this.btnIzracunaj.Text = "Izracunaj";
             this.btnIzracunaj.UseVisualStyleBackColor = true;
+            this.btnIzracunaj.Click += new System.EventHandler(this.btnIzracunaj_Click);
             // 
             // btnOcisti
             // 
